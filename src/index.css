@@ -1,0 +1,77 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f9f9f9;
+  --surface: #ffffff;
+  --text: #0f0f0f;
+  --text-secondary: #606060;
+  --border: #e0e0e0;
+  --navbar-bg: #ffffff;
+  --input-bg: #f1f1f1;
+  --skeleton: #e0e0e0;
+  --skeleton-shine: #f5f5f5;
+  --error-bg: #fff0f0;
+  --error-text: #c00;
+  --chip-bg: #f2f2f2;
+  --chip-active-bg: #0f0f0f;
+  --chip-active-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f0f;
+  --surface: #1f1f1f;
+  --text: #f1f1f1;
+  --text-secondary: #aaaaaa;
+  --border: #2e2e2e;
+  --navbar-bg: #212121;
+  --input-bg: #121212;
+  --skeleton: #2e2e2e;
+  --skeleton-shine: #3a3a3a;
+  --error-bg: #2a0000;
+  --error-text: #ff6b6b;
+  --chip-bg: #2e2e2e;
+  --chip-active-bg: #f1f1f1;
+  --chip-active-text: #0f0f0f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  min-height: 100svh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text);
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--skeleton) 25%, var(--skeleton-shine) 50%, var(--skeleton) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
